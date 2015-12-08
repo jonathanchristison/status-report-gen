@@ -1,0 +1,33 @@
+Hello,
+
+Last week:
+    Work areas:
+
+    {% for wa in workareas %}
+        {{ wa.name }}
+{{ lipsum(2, Flase) | wordwrap(width=60, break_long_words=True) | indent(8,True) }}
+    {% endfor %}
+    
+    Significant Events:
+    
+    {% for wa in workareas %}
+        {{ wa.name }}:
+        {% for e in wa.events %}
+            {{ e }}
+        {% endfor %}
+    {% endfor %}
+    
+    Key Updates:
+        {% for ku in keyupdates %}
+        {{ ku.name }}:
+            {{ku.description}}
+        {% endfor %}
+    
+    Events Expected Before Next Report:
+        {%for ev in expectedevents %}
+        {{ ev.name }}:
+            {{ ev.description }}
+        {%endfor%} 
+    {# Statistics: #}
+        
+Kind regards, 
