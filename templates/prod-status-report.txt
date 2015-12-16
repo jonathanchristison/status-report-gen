@@ -4,8 +4,7 @@ Last week:
     Work areas:
 
     {% for wa in workareas %}
-        {{ wa.name }}
-{{ lipsum(2, Flase) | wordwrap(width=60, break_long_words=True) | indent(8,True) }}
+        {{ wa }}
     {% endfor %}
     
     Significant Events:
