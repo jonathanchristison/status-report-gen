@@ -4,16 +4,16 @@ Last week:
     Work areas:
 
     {% for wa in workareas %}
-        {{ wa }}
+        {{ wa | capitalize }}
     {% endfor %}
     
     Significant Events:
     
-    {% for wa in workareas %}
-        {{ wa.name }}:
-        {% for e in wa.events %}
-            {{ e }}
-        {% endfor %}
+    {% for wa, e in workareas.items() %}
+        {{ wa | capitalize}}:
+        {% for event in e['events']%}
+{{ event | wordwrap(width=60, break_long_words=True) | indent(9,True)}}
+        {%endfor%}
     {% endfor %}
     
     Key Updates:

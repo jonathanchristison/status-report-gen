@@ -134,17 +134,7 @@ def upcoming_events():
 
 def main():
     tdl = TodoList()
-    pp.pprint(tdl.history)
     print "Subject: {}".format(gen_subject())
-    '''
-    for proj in from_todo():
-        if proj is not None:
-            print '\'' + proj + '\''
-            for taskid, pri, task in from_todo(proj):
-                print taskid + " " + pri + " " + task
-                #print pri
-                #print task
-    '''
     print template.render(workareas=work_areas(tdl),
             keyupdates=key_updates(),
             expectedevents=upcoming_events()
