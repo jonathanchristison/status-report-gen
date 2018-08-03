@@ -92,7 +92,7 @@ class TodoList(object):
         return ret
 
 def gen_subject():
-    subject = "Prod status "
+    subject = "Weekly status report "
     d = date.today()
     td = timedelta(d.weekday())
     week_start = d - td

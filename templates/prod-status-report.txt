@@ -1,20 +1,20 @@
 Hello,
 
 Last week:
-    Work areas:
+{{ "Work areas:" | indent(4,True)}}
 
-    {% for wa in workareas %}
-        {{ wa | capitalize }}
-    {% endfor %}
+{% for wa in workareas %}
+{{ wa | capitalize | indent(6,True) }}
+{% endfor %}
     
     Significant Events:
     
-    {% for wa, e in workareas.items() %}
-        {{ wa | capitalize}}:
-        {% for event in e['events']%}
+{% for wa, e in workareas.items() %}
+{{ wa | capitalize | indent(4,True)}}:
+{% for event in e['events']%}
 {{ event | wordwrap(width=60, break_long_words=True) | indent(9,True)}}
-        {%endfor%}
-    {% endfor %}
+{%endfor%}
+{% endfor %}
     
     Key Updates:
         {% for ku in keyupdates %}
